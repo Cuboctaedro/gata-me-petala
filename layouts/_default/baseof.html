@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+    <meta charset="utf-8">
+    <title> {{ .Title }} - {{ .Site.Title }} </title>
+    <meta name="description" content="{{ .Summary }}">
+    <link rel="canonical" href="{{ .URL | absURL }}" />
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <meta name="robots" content="index, follow" />
+    <meta property="og:site_name" content="{{ .Site.Title }}" />
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ .URL | absLangURL }}">
+    <meta property="og:title" content="{{ .Title }}">
+    <meta property="og:description" content="{{ .Summary }}">
+    {{ with .Params.image }}
+        <meta property="og:image" content="{{ . | absURL }}">
+    {{ end }}
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ .URL | absLangURL }}">
+    <meta name="twitter:title" content="{{ .Title }}">
+    <meta name="twitter:description" content="{{ .Summary }}">
+    {{ with .Params.image }}
+        <meta name="twitter:image" content="{{ . | absURL }}">
+    {{ end }}
+    {{ block "meta" . }}
+    {{ end }}
+    <script type="text/javascript">
+    //uncomment and change this to false if you're having trouble with WOFFs
+    //var woffEnabled = true;
+    //to place your webfonts in a custom directory
+    //uncomment this and set it to where your webfonts are.
+    var customPath = "/assets";
+    </script>
+    
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+    <link rel="stylesheet" href="{{ "/styles/index.css" | absURL }}" type="text/css">    
+</head>
+<body>
+    <nav class="o-bar caps" role="navigation">
+        <ul class="o-nav o-nav--h o-bar__last">
+        {{ range .AllTranslations }}
+            <li class="">
+                <a href="{{.URL}}">{{ .Language.LanguageName }}</a>
+            </li>
+        {{end}}
+        </ul>
+
+        <button class="o-bar__first o-bar__button js-navbar__toggle none--tab" type="button">Menu</button>
+
+        <ul class="o-nav o-nav--v o-nav--h--tab o-bar__extended js-navbar__toggle-target">
+            {{ with .Site.GetPage "home" }}
+            <li class="">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </li>
+            {{ end }}
+            <li class=" js-dropdown--click">
+                <a href="#" class="js-dropdown__button">{{ i18n "jewelry" }}</a>
+                <ul class="js-dropdown__target js-dropdown__target--push js-dropdown__target--overlay--tab o-nav o-nav--v o-nav__subnav">
+                    {{ range where .Site.Pages ".Params.menutype" "jewelry" }}
+                        <li class="">
+                            <a href="{{ .Permalink }}">{{ .Title }}</a>
+                        </li>
+                    {{ end }}
+                </ul>
+            </li>
+            <li class=" js-dropdown--click">
+                <a href="#" class="js-dropdown__button">{{ i18n "cement" }}</a>
+                <ul class="js-dropdown__target js-dropdown__target--push js-dropdown__target--overlay--tab o-nav o-nav--v o-nav__subnav">
+                    {{ range where .Site.Pages ".Params.menutype" "cement" }}
+                        <li class="">
+                            <a href="{{ .Permalink }}">{{ .Title }}</a>
+                        </li>
+                    {{ end }}
+                </ul>
+            </li>
+            <li class=" js-dropdown--click">
+                <a href="#" class="js-dropdown__button">{{ i18n "seminars" }}</a>
+                <ul class="js-dropdown__target js-dropdown__target--push js-dropdown__target--overlay--tab o-nav o-nav--v o-nav__subnav">
+                    {{ range sort (where .Site.Pages ".Params.menutype" "seminars") ".Params.menusort" }}
+                        <li class="">
+                            <a href="{{ .Permalink }}">{{ .Title }}</a>
+                        </li>
+                    {{ end }}
+                </ul>
+            </li>
+            {{ with .Site.GetPage "page" "about-us" }}
+            <li class="">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </li>
+            {{ end }}
+            {{ with .Site.GetPage "page" "contact" }}
+            <li class="">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </li>
+            {{ end }}
+            {{ with .Site.GetPage "section" "events" }}
+            <li class="">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+            </li>
+            {{ end }}
+        </ul>
+    </nav>
+
+    <div class="pt-nine">
+        <div class="o-container mb-six">
+            <header id="header" class="o-grid" role="banner">
+            {{ if .IsHome }}
+                <h1 class="o-grid__cell o-grid__cell--3of4 o-grid__cell--3of8--tab o-grid__cell--3of12--desk">
+                    <a href="{{ "/" | absLangURL }}" class="c-sitelogo fill-white">
+                        <span class="visually-hidden">{{ .Site.Title }}</span>
+                        {{ partial "logo.svg" . }}
+                    </a>
+                </h1>
+            {{ else }}
+                <div class="o-grid__cell o-grid__cell--3of4 o-grid__cell--3of8--tab o-grid__cell--3of12--desk">
+                    <a href="{{ "/" | absLangURL }}" class="c-sitelogo fill-blue">
+                        <span class="visually-hidden">{{ .Site.Title }}</span>
+                        {{ partial "logo.svg" . }}
+                    </a>
+                </div>
+            {{ end }}
+            </header>
+        </div>
+        {{ block "main" . }}
+        {{ end }}
+        <footer id="footer">
+        </footer>
+    </div>
+    <script src="{{ "/scripts/index.js" | absURL }}"></script>
+</body>
+</html>

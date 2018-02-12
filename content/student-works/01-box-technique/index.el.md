@@ -1,0 +1,33 @@
+---
+title: Box technique
+resources :
+  - src : "01-dimitrisdouros-01.jpg"
+    name : "Δημήτρης Ντούρος - Κρεμαστό"
+  - src : "02-EleniKefala-01.jpg"
+    name : "Ελένη Κεφαλά- Βραχιόλι"
+  - src : "03-NikiMpourdeka-01.jpg"
+    name : "Νίκη Μπορδέκα - Βραχιόλι"
+  - src : "04-NikiMpourdeka-02.jpg"
+    name : "Νίκη Μπορδέκα - Κρεμαστό"
+  - src : "05-NikiMpourdeka-03.jpg"
+    name : "Νίκη Μπορδέκα - Καρφίτσα"
+  - src : "06-VarvaraAliberti-01.jpg"
+    name : "Βαρβάρα Αλιμπέρτη- Κρεμαστό"
+  - src : "07-MariaSygelaki-01.jpg"
+    name : "Μαρία Συγγελάκη - Σκουλαρίκι"
+  - src : "08-VasoGava-01.jpg"
+    name : "Βάσω Γκαβά - Δαχτυλίδι"
+  - src : "09-HrysanthiHahoulia-01.jpg"
+    name : "Χρυσάνθη Χαχούλια - Κρεμαστό"
+  - src : "10-MarinaKarasmani-01.jpg"
+    name : "Μαρίνα Καρασμάνη - Κρεμαστό"
+  - src : "11-EleniMalli-01.jpg"
+    name : "Ελένη Μάλλη - Δαχτυλίδι"
+  - src : "12-AnnaRakoutouarizon-01.jpg"
+    name : "Άννα Ρακουτουαριζόν - Δαχτυλίδι"
+  - src : "13-StayroulaPapatou.jpg"
+    name : "Σταυρούλα Παπάτου - Σκουλαρίκια"
+  - src : "14-MargaritaAlexandridi-01.jpg"
+    name : "Μαργαρίτα Αλεξανδρίδη - Κρεμαστό"
+
+---

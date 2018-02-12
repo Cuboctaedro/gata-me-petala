@@ -1,0 +1,16 @@
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "WebPage",
+        "name": "{{ .Title }}",
+        {{ range .Resources.ByType "image" }}
+        "image": {
+            "@type": "ImageObject",
+            "url": "{{ .Permalink }}",
+            "height": {{.Height }},
+            "width": {{.Width }}
+        },
+        {{ end }}
+"description": "{{ .Summary }}"
+    }
+</script>

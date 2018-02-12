@@ -1,0 +1,28 @@
+{{ range .Resources.ByType "image" }}
+{{ $image := .Resize "x310" }}
+    {{ if gt .Width .Height}}
+    <figure class="o-grid__cell o-grid__cell--2of3--desk c-card" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+        {{/* <a href="{{ .Permalink }}" rel="modal:open" itemprop="contentUrl"> */}}
+            <div class="c-card__image o-aspect-ratio--landscape"  style="background-image: url({{ $image.RelPermalink }});">
+                <img class="visually-hidden" src="{{ $image.RelPermalink }}" alt="{{ .Name }}">
+            </div>
+        {{/* </a> */}}
+    </figure>
+    {{ else if lt .Width .Height}}
+    <figure class="o-grid__cell o-grid__cell--2of3--desk c-card" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+        {{/* <a href="{{ .Permalink }}" rel="modal:open" itemprop="contentUrl"> */}}
+            <div class="c-card__image o-aspect-ratio--landscape"  style="background-image: url({{ $image.RelPermalink }});">
+                <img class="visually-hidden" src="{{ $image.RelPermalink }}" alt="{{ .Name }}">
+            </div>
+        {{/* </a> */}}
+    </figure>
+    {{ else }}
+    <figure class="o-grid__cell o-grid__cell--1of2--desk c-card" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+        {{/* <a href="{{ .Permalink }}" rel="modal:open" itemprop="contentUrl"> */}}
+            <div class="c-card__image o-aspect-ratio--landscape"  style="background-image: url({{ $image.RelPermalink }});">
+                <img class="visually-hidden" src="{{ $image.RelPermalink }}" alt="{{ .Name }}">
+            </div>
+        {{/* </a> */}}
+    </figure>
+    {{ end }}
+{{ end }}

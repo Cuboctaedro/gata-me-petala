@@ -1,0 +1,33 @@
+{{ define "meta" }}
+    {{ partial "schemalist.html" . }}
+{{ end }}
+{{ define "main" }}
+<main class="main objectlist">
+    <div class="o-container">
+        <article class="o-grid mb-three">
+            <header class="o-grid__cell">
+                <h1 class="fs-giga titlefont mb-three b-top--solid b-hair pt-one">{{ .Title }}</h1>
+            </header>
+            <div class="s-generated o-grid__cell o-grid__cell--6of8--tab o-grid__cell--6of12--desk">
+                {{ .Content }}
+            </div>
+        </article>
+        <section class=" mb-three o-grid" >
+        {{ range .Data.Pages }}
+            <article class="o-grid__cell o-grid__cell--4of8--tab o-grid__cell--4of12--desk c-card">
+                <a href="{{ .Permalink }}">
+                    {{ range .Resources.Match .Params.image }}
+                        <div class="c-card__image o-aspect-ratio--landscape"  style="background-image: url({{ .RelPermalink }});">
+                            <img class="visually-hidden" src="{{ .RelPermalink }}" alt="{{ .Name }}">
+                        </div>
+                    {{ end }}
+                    <div class="c-card__title">
+                        <h3 class="ta--center pt-one pb-one">{{ .Title }}</h3>
+                    </div>
+                </a>
+            </article>
+        {{ end }}
+        </section>
+    </div>
+</main>
+{{ end }}

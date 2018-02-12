@@ -1,0 +1,28 @@
+{{ define "meta" }}
+    {{ partial "schemalist.html" . }}
+{{ end }}
+{{ define "main" }}
+<main class="main">
+    <div class="o-container">
+        <section class="o-grid mb-three">
+            <header class="o-grid__cell">
+                <h1 class="fs-giga titlefont mb-three b-top--solid b-hair pt-one">{{ .Title }}</h1>
+            </header>
+        </section>
+    {{ range .Data.Pages }}
+    <article class="o-grid mb-three">
+        <div class="o-grid__cell o-grid__cell--6of8--tab o-grid__cell--8of12--desk">
+            {{ partial "date.html" . }}
+           <header class="">
+                <h2 class="postheader fs-mega titlefont mb-one b-top--solid b-hair pt-one b-blue">
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                </h2>
+            </header>
+            <div class="s-generated ">{{ .Summary }}</div>
+        </div>
+    </article>
+    {{ end }}
+</div>
+</main>
+
+{{ end }}

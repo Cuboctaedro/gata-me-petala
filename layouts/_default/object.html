@@ -1,0 +1,18 @@
+{{ define "meta" }}
+    {{ partial "schemawork.html" . }}
+{{ end }}
+{{ define "main" }}
+<main class="main">
+    <div class="o-container">
+        <article class="o-grid mb-three">
+            <header class="o-grid__cell">
+                <h1 class="fs-giga titlefont mb-three b-top--solid b-hair pt-one">{{ .Title }}</h1>
+            </header>
+            <div class="s-generated o-grid__cell o-grid__cell--3of8--tab o-grid__cell--3of12--desk">{{ .Content }}</div>
+            <div class="o-grid__cell o-grid__cell--5of8--tab o-grid__cell--9of12--desk">
+                {{ partial "gallery.html" . }}
+            </div>
+        </article>
+    </div>
+</main>
+{{ end }}

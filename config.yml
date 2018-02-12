@@ -1,0 +1,32 @@
+
+baseURL:                    "http://gatamepetala.com"
+config:                     "config.yml"
+contentDir:                 "content"
+dataDir:                    "data"
+defaultLayout:              "post"
+defaultContentLanguage:     "en"
+defaultContentLanguageInSubdir: false
+languages:
+  en:
+    title: "Gata Me Petala"
+    LanguageName: en
+  el:
+    title: "Γάτα με Πέταλα"
+    LanguageName: el
+enableGitInfo:              false
+enableRobotsTXT:            true
+disableHugoGeneratorInject: true
+# Allows you to disable all page types and will render nothing related to 'kind';
+# values = "page", "home", "section", "taxonomy", "taxonomyTerm", "RSS", "sitemap", "robotsTXT", "404"
+disableKinds: ["taxonomy", "taxonomyTerm"]
+disablePathToLower:         false
+enableMissingTranslationPlaceholders: false
+googleAnalytics:            ""
+summaryLength:              20
+metaDataFormat:             "yaml"
+paginate:                   100
+paginatePath:               "page"
+rssLimit:                   15
+sitemap:
+source:                     ""
+uglyURLs:                   false

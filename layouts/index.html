@@ -1,0 +1,33 @@
+{{ define "main" }}
+{{ with .Params.image }}
+<div class="fixed top-zero bottom-zero left-zero right-zero" style="background-image: url({{ . | absURL }}); background-size:cover; z-index:-1; background-position:center;"></div>
+{{ end }}
+<main class="main " >
+    <div class="o-container">
+        <article class="o-grid">
+            <div class="o-grid__cell o-grid__cell--6of12--desk fs-large fw-3 c-white">
+                <div class="c-overlay-box">
+                    {{ .Content }}
+                </div>
+            </div>
+        </article>
+        {{ range first 1 (where (where .Site.Pages "Section" "events") ".Params.layout" "!=" "news")}}
+            <article class="o-grid">
+                <div class="o-grid__cell o-grid__cell--6of12--desk fs-large fw-3 c-white">
+                    <a href="{{ .Permalink }}">
+                        <div class="c-overlay-box">
+                            <header class="">
+                                <h2 class="fs-large boldfont mb-one b-top--solid b-hair pt-one b-blue">{{ .Title }}</h2>
+                            </header>
+                            <div class="s-generated ">
+                                <div class="c-white">{{ .Summary }}</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </article>
+        {{ end }}
+    </div>
+
+</main>
+{{ end }}

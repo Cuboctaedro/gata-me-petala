@@ -1,0 +1,21 @@
+<script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "CreativeWork",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "{{ .Permalink }}"
+        },
+        "name": "{{ .Title }}",
+        {{ range .Resources.ByType "image" }}
+        "image": {
+            "@type": "ImageObject",
+            "url": "{{ .Permalink }}",
+            "height": {{.Height }},
+            "width": {{.Width }}
+        },
+        {{ end }}
+        "description": "{{ .Summary }}",
+        "url": "{{ .Permalink }}"
+    }
+</script>
