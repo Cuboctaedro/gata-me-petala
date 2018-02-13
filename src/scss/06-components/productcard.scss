@@ -1,0 +1,13 @@
+.c-card {
+    .c-card__image {
+        background-size: cover;
+        @include box-shadow('two');
+    }
+    &:hover .c-card__image {
+        @include box-shadow('three');
+    }
+    .c-card__title {
+        @include textsize(14 24);
+        color: get-color('black');
+    }
+}

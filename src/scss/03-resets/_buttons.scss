@@ -1,0 +1,91 @@
+/* ==========================================================================
+   #BUTTONS
+   ========================================================================== */
+
+/**
+ * Mixins for buttons.
+ *
+ *
+ */
+
+
+/* Defaults
+   ========================================================================== */
+
+$btn-defaults : (
+    'radius'              : 2px,
+    'size-small-height'   : 3 * $global-module,
+    'size-small-padding'  : $global-module,
+    'size-small-font'     : 14px,
+    'size-medium-height'  : 4 * $global-module,
+    'size-medium-padding' : 2 * $global-module,
+    'size-medium-font'    : 14px,
+    'size-large-height'   : 5 * $global-module,
+    'size-large-padding'  : 3 * $global-module,
+    'size-large-font'     : 16px,
+) !default;
+
+
+
+/* Basic mixin
+   ========================================================================== */
+
+@mixin btn() {
+    display: inline-block;
+    overflow: visible;
+    max-width: 100%;
+
+    margin: 0;
+    border-style: solid;
+    padding-top: 0;
+    padding-bottom: 0;
+    border-radius: map-get($btn-defaults, 'radius');
+
+    font-family: inherit;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+
+    cursor: pointer;
+}
+
+
+/* Size mixin
+   ========================================================================== */
+
+@mixin btn-size($size) {
+    @if $size == 'small' {
+        height: _rem(map-get($btn-defaults, 'size-small-height'));
+        padding-left: _rem(map-get($btn-defaults, 'size-small-padding'));
+        padding-right: _rem(map-get($btn-defaults, 'size-small-padding'));
+        font-size: _rem(map-get($btn-defaults, 'size-small-font'));
+    } @else if $size == 'medium' {
+        height: _rem(map-get($btn-defaults, 'size-medium-height'));
+        padding-left: _rem(map-get($btn-defaults, 'size-medium-padding'));
+        padding-right: _rem(map-get($btn-defaults, 'size-medium-padding'));
+        font-size: _rem(map-get($btn-defaults, 'size-medium-font'));
+    } @else if $size == 'large' {
+        height: _rem(map-get($btn-defaults, 'size-large-height'));
+        padding-left: _rem(map-get($btn-defaults, 'size-large-padding'));
+        padding-right: _rem(map-get($btn-defaults, 'size-large-padding'));
+        font-size: _rem(map-get($btn-defaults, 'size-large-font'));
+    }
+}
+
+
+
+/* Color mixin
+   ========================================================================== */
+
+@mixin btn-line($color) {
+    border: 1px solid $color;
+    color: $color;
+    background: $global-color-background;
+}
+
+
+@mixin btn-solid($color) {
+    border: none;
+    color: $global-color-background;
+    background: $color;
+}

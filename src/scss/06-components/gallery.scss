@@ -1,0 +1,11 @@
+.c-gallery {
+    img {
+        transition: all .35s ease-in-out;
+        border: 1px solid darken(get-color('blue'), 10%);
+        width: 100%;
+        height: auto;
+        &:hover {
+            @include box-shadow('three');
+        }
+    }
+}

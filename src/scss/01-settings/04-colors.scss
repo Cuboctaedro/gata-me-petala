@@ -1,0 +1,10 @@
+$global-colors : (
+    'black'    : #383537,
+    'grey'     : #C9C8BF,
+    'white'    : #F7F6F0,
+    'blue'     : #4F7070
+) !default;
+
+$global-color-accent : map-get($global-colors, 'blue');
+$global-color-background : map-get($global-colors, 'grey');
+$global-color-text : map-get($global-colors, 'black');

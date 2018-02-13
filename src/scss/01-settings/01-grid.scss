@@ -1,0 +1,20 @@
+/* Grid
+   ========================================================================== */
+
+$global-module             : 8px !default;
+
+$global-gutter-phone       : 2 * $global-module !default;
+$global-gutter-tablet      : 3 * $global-module !default;
+$global-gutter-desktop     : 5 * $global-module !default;
+$global-min-module-phone   : 8 * $global-module !default;
+$global-max-module-phone   : 12 * $global-module !default;
+$global-min-module-tablet  : 8 * $global-module !default;
+$global-max-module-tablet  : 11 * $global-module !default;
+$global-min-module-desktop : 7 * $global-module !default;
+$global-max-module-desktop : 10 * $global-module !default;
+$global-columns-phone      : 4 !default;
+$global-columns-tablet     : 8 !default;
+$global-columns-desktop    : 12 !default;
+
+
+$global-navbar-height : 48px;

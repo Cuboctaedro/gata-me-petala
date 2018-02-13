@@ -1,0 +1,27 @@
+/* ==========================================================================
+   #COLOR CLASSES
+   ========================================================================== */
+
+/**
+ * Classes for color, background, border-color  and fill.
+ *
+ */
+
+
+@each $key, $value in $global-colors {
+    .c-#{$key} {
+        color: $value;
+    }
+    .bgc-#{$key} {
+        background-color: $value;
+    }
+    .b-#{$key} {
+        border-color: $value;
+    }
+    .fill-#{$key} {
+        fill: $value;
+        & * {
+            fill: $value;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+/* ==========================================================================
+   #BOX SHADOW CLASSES
+   ========================================================================== */
+
+/**
+ * Applies box-shadow property from predefined values.
+ *
+ */
+
+$box-shadow-values : $global-box-shadows;
+
+@each $key, $value in $box-shadow-values {
+    .shadow-#{$key} {
+        box-shadow: unquote($value);
+    }
+}

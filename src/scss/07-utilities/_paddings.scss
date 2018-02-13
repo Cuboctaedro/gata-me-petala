@@ -1,0 +1,57 @@
+/* ==========================================================================
+   #PADDING CLASSES
+   ========================================================================== */
+
+/**
+ * Generate utility classes for padding.
+ *
+ *
+ */
+
+$padding-side-values : (
+    'p'  : '',
+    'pt' : '-top',
+    'pr' : '-right',
+    'pb' : '-bottom',
+    'pl' : '-left'
+) ;
+
+
+ /* Base class
+    ========================================================================== */
+
+@each $side-key, $side-val in $padding-side-values {
+    @each $width-key, $width-val in $global-spacing {
+        .#{$side-key}-#{$width-key} {
+            padding#{$side-val}: _rem($width-val);
+        }
+    }
+}
+
+
+/* Tablet and larger
+   ========================================================================== */
+
+@include mq-tablet() {
+    @each $side-key, $side-val in $padding-side-values {
+        @each $width-key, $width-val in $global-spacing {
+            .#{$side-key}-#{$width-key}--tab {
+                padding#{$side-val}: _rem($width-val);
+            }
+        }
+    }
+}
+
+
+/* Desktop and larger
+   ========================================================================== */
+
+@include mq-desktop() {
+    @each $side-key, $side-val in $padding-side-values {
+        @each $width-key, $width-val in $global-spacing {
+            .#{$side-key}-#{$width-key}--desk {
+                padding#{$side-val}: _rem($width-val);
+            }
+        }
+    }
+}

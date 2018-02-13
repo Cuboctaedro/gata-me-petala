@@ -1,0 +1,102 @@
+/* ==========================================================================
+   #MEDIA QUERIES MIXINS
+   ========================================================================== */
+
+/**
+ * All media queries have the form @media screen and (min-width: {width}).
+ * The approach is mobile-first, every rule is active in all sizes
+ * unless a media query limits it to be active from one size and after.
+ * Therefore .classname is overriden by .classname--tab when the screen size
+ * reaches the mq-tablet breakpoint and then by .classname--desk when the
+ * screen width reaches mq-desktop.
+ *
+ *
+ */
+
+
+/* General mixin
+   ========================================================================== */
+
+@mixin mq($from){
+    @media screen and (min-width: _em($from)){
+        @content;
+    }
+}
+
+/* Start of --tab postfix
+   ========================================================================== */
+
+@mixin mq-tablet(){
+    @media screen and (min-width: _em($min-tablet-wrapper + (3 * $global-gutter-tablet))){
+        @content;
+    }
+}
+
+/* Start of --desk postfix
+   ========================================================================== */
+
+@mixin mq-desktop(){
+    @media screen and (min-width: _em($min-desktop-wrapper + (3 * $global-gutter-desktop))){
+        @content;
+    }
+}
+
+
+
+/* (Fluid) Phone start
+   ========================================================================== */
+
+@mixin mq-phone-start(){
+    @media screen and (min-width: _em($min-phone-wrapper + (3 * $global-gutter-phone))){
+        @content;
+    }
+}
+
+/* (Fluid) Phone end
+   ========================================================================== */
+
+@mixin mq-phone-end(){
+    @media screen and (min-width: _em($max-phone-wrapper + (3 * $global-gutter-phone))){
+        @content;
+    }
+}
+
+
+/* (Fluid) Tablet start
+   ========================================================================== */
+
+@mixin mq-tablet-start(){
+    @media screen and (min-width: _em($min-tablet-wrapper + (6 * $global-gutter-tablet))){
+        @content;
+    }
+}
+
+
+/* (Fluid) Tablet end
+   ========================================================================== */
+
+@mixin mq-tablet-end(){
+    @media screen and (min-width: _em($max-tablet-wrapper + (6 * $global-gutter-tablet))){
+        @content;
+    }
+
+}
+
+/* (Fluid) Desktop start
+   ========================================================================== */
+
+@mixin mq-desktop-start(){
+    @media screen and (min-width: _em($min-desktop-wrapper + (6 * $global-gutter-desktop))){
+        @content;
+    }
+}
+
+
+/* (Fluid) Desktop end
+   ========================================================================== */
+
+@mixin mq-desktop-end(){
+    @media screen and (min-width: _em($max-desktop-wrapper + (6 * $global-gutter-desktop))){
+        @content;
+    }
+}

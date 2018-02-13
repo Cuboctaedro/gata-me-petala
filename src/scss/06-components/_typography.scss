@@ -1,0 +1,109 @@
+
+
+
+
+/* Font Sizes
+   ========================================================================== */
+
+$font-sizes : $global-font-sizes !default;
+
+
+@each $key, $value in $font-sizes {
+    .fs-#{$key} {
+        @include textsize($value);
+    }
+}
+
+@include mq-tablet() {
+    @each $key, $value in $font-sizes {
+        .fs-#{$key}--tab {
+            @include textsize($value);
+        }
+    }
+};
+
+@include mq-desktop() {
+    @each $key, $value in $font-sizes {
+        .fs-#{$key}--desk {
+            @include textsize($value);
+        }
+    }
+};
+
+
+
+/* Font Weight
+   ========================================================================== */
+
+@for $num from 1 through 9 {
+    .fw-#{$num} {
+        font-weight: $num * 100;
+    }
+}
+
+
+/* Font Family
+   ========================================================================== */
+
+
+
+/* Caps
+   ========================================================================== */
+
+.caps {
+    text-transform: uppercase;
+    @include letter-spacing('wide');
+}
+/* Text align
+   ========================================================================== */
+
+.ta--left{
+    text-align: left;
+}
+.ta--right{
+    text-align: right;
+}
+.ta--center{
+    text-align: center;
+}
+
+@include mq-tablet() {
+    .ta--left--tab {
+        text-align: left;
+    }
+    .ta--right--tab {
+        text-align: right;
+    }
+    .ta--center--tab {
+        text-align: center;
+    }
+}
+
+@include mq-desktop() {
+    .ta--left--desk {
+        text-align: left;
+    }
+    .ta--right--desk {
+        text-align: right;
+    }
+    .ta--center--desk {
+        text-align: center;
+    }
+}
+
+.postheader {
+    a {
+        color: get-color('blue');
+        @include underline-l2r($color: get-color('blue'));
+    }
+}
+.titlefont{
+    font-family: 'Source Sans Pro';
+	font-weight: 300;
+	font-style: normal;
+}
+.boldfont{
+    font-family: 'Source Sans Pro';
+	font-weight: 700;
+	font-style: normal;
+}

@@ -1,0 +1,493 @@
+/* ==========================================================================
+   #GRID
+   ========================================================================== */
+
+/**
+ * Classes for the grid.
+ *
+ * The grid has 4 columns at mobile, 8 at tablet and 12 at desktop.
+ * To avoid exessive shrinking or stretching of elements the grid becomes
+ * fixed at certain points and fluid at others.
+ * There are three fixed gutters for phone, tablet and desktop.
+ *
+ *
+ * Base classes:
+ * -------------
+ *
+ * .o-grid = Defines responsive width of the grid's containing element.
+ * Does not take modifiers.
+ *
+ * .o-grid__cell = Grid element. Has width and margins defined by this class.
+ * It does not use padding for gutters so you are free to add paddings
+ * and borders (unless you want to nest another grid inside it.)
+ *
+ * .o-grid__nest = Helper class for nesting grids. Must be used on an element
+ * inside a .o-grid__cell. Nested grid cells can be made only with the --p25 to
+ * --p75 modifiers.
+ *
+ *
+ * Modifiers
+ * ------------
+ *
+ * --1 to --12 = The width of a .o-grid__cell in columns. When the width is
+ * greater than the number of columns for the specific breakpoint it defaults
+ * to the allowed maximum.
+ *
+ * --p25, to --p75 = Helper classes that define the width of a .o-grid__cell
+ * as a percentage of its container. Usefull mostly for nested cells,
+ * where 1-12 classes will not work.
+ *
+ * --push-1 to --push-11 = Push a grid cell to the right by a number of cells.
+ *
+ */
+
+
+
+
+/* Grid cell width
+   ========================================================================== */
+
+@mixin _gridcell($size) {
+    width: $size * 100%;
+}
+
+
+/* Grid push margin
+   ========================================================================== */
+
+@mixin _gridpush($size) {
+    margin-left: $size * 100%;
+}
+
+
+/* Outer container
+   ========================================================================== */
+
+.o-container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    padding-left: _rem($global-gutter-phone) ;
+    padding-right: _rem($global-gutter-phone) ;
+}
+
+/* Grid container
+   ========================================================================== */
+
+.o-grid {
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: _rem($global-gutter-phone) / 2;
+    padding-right: _rem($global-gutter-phone) / 2;
+    margin-left: _rem($global-gutter-phone) * -1;
+    margin-right: _rem($global-gutter-phone) * -1;
+}
+
+.o-grid--masonry {
+    flex-direction: column;
+}
+
+/* Grid cells
+   ========================================================================== */
+
+.o-grid__cell--1, .o-grid__cell--2, .o-grid__cell--3, .o-grid__cell--4,
+.o-grid__cell--5, .o-grid__cell--6, .o-grid__cell--7, .o-grid__cell--8,
+.o-grid__cell--9, .o-grid__cell--10, .o-grid__cell--11, .o-grid__cell--12 {
+    width: 100%;
+}
+
+.o-grid__cell {
+    padding-left: _rem($global-gutter-phone) / 2;
+    padding-right: _rem($global-gutter-phone) / 2;
+    margin-bottom: _rem($global-gutter-phone);
+    width: 100%;
+}
+
+
+/* Phone (4-column)
+   ========================================================================== */
+
+@include mq-phone-start() {
+    .o-grid__cell--1 {
+        @include _gridcell(1/4);
+    }
+    .o-grid__cell--2 {
+        @include _gridcell(1/2);
+    }
+    .o-grid__cell--3 {
+        @include _gridcell(3/4);
+    }
+    .o-grid--push-1 {
+        @include _gridpush(1/4);
+    }
+    .o-grid--push-2 {
+        @include _gridpush(1/2);
+    }
+    .o-grid--push-3, .o-grid--push-4, .o-grid--push-5, .o-grid--push-6, .o-grid--push-7, .o-grid--push-8, .o-grid--push-9, .o-grid--push-10, .o-grid--push-11 {
+        @include _gridpush(3/4);
+    }
+}
+
+
+/* Phone (4-column) - Fixed Container
+   ========================================================================== */
+
+@include mq-phone-end() {
+    .o-container {
+        width: _rem($max-phone-wrapper);
+    }
+}
+
+
+/* Tablet (8-column)
+   ========================================================================== */
+
+@include mq-tablet-start() {
+    .o-container {
+        width: 100%;
+        padding-left: _rem($global-gutter-tablet) ;
+        padding-right: _rem($global-gutter-tablet) ;
+    }
+    .o-grid {
+        padding-left: _rem($global-gutter-tablet) / 2;
+        padding-right: _rem($global-gutter-tablet) / 2;
+        margin-left: _rem($global-gutter-tablet) * -1;
+        margin-right: _rem($global-gutter-tablet) * -1;
+    }
+    .o-grid__cell {
+        padding-left: _rem($global-gutter-tablet) / 2;
+        padding-right: _rem($global-gutter-tablet) / 2;
+        margin-bottom: _rem($global-gutter-tablet);
+    }
+    .o-grid__cell--1 {
+        @include _gridcell(1/8);
+    }
+    .o-grid__cell--2 {
+        @include _gridcell(2/8);
+    }
+    .o-grid__cell--3 {
+        @include _gridcell(3/8);
+    }
+    .o-grid__cell--4 {
+        @include _gridcell(4/8);
+    }
+    .o-grid__cell--5 {
+        @include _gridcell(5/8);
+    }
+    .o-grid__cell--6 {
+        @include _gridcell(6/8);
+    }
+    .o-grid__cell--7 {
+        @include _gridcell(7/8);
+    }
+    .o-grid__cell--8 {
+        @include _gridcell(1);
+    }
+    .o-grid__cell--9, .o-grid__cell--10, .o-grid__cell--11, .o-grid__cell--12 {
+        @include _gridcell(1);
+    }
+    .o-grid__cell--1--tab {
+        @include _gridcell(1/8);
+    }
+    .o-grid__cell--2--tab {
+        @include _gridcell(2/8);
+    }
+    .o-grid__cell--3--tab {
+        @include _gridcell(3/8);
+    }
+    .o-grid__cell--4--tab {
+        @include _gridcell(4/8);
+    }
+    .o-grid__cell--5--tab {
+        @include _gridcell(5/8);
+    }
+    .o-grid__cell--6--tab {
+        @include _gridcell(6/8);
+    }
+    .o-grid__cell--7--tab {
+        @include _gridcell(7/8);
+    }
+    .o-grid__cell--8--tab {
+        @include _gridcell(1);
+    }
+    .o-grid--push-1 {
+        @include _gridpush(1/8);
+    }
+    .o-grid--push-2 {
+        @include _gridpush(2/8);
+    }
+    .o-grid--push-3 {
+        @include _gridpush(3/8);
+    }
+    .o-grid--push-4 {
+        @include _gridpush(4/8);
+    }
+    .o-grid--push-5 {
+        @include _gridpush(5/8);
+    }
+    .o-grid--push-6 {
+        @include _gridpush(6/8);
+    }
+    .o-grid--push-7, .o-grid--push-8, .o-grid--push-9, .o-grid--push-10, .o-grid--push-11 {
+        @include _gridpush(7/8);
+    }
+    .o-grid--push-1--tab {
+        @include _gridpush(1/8);
+    }
+    .o-grid--push-2--tab {
+        @include _gridpush(2/8);
+    }
+    .o-grid--push-3--tab {
+        @include _gridpush(3/8);
+    }
+    .o-grid--push-4--tab {
+        @include _gridpush(4/8);
+    }
+    .o-grid--push-5--tab {
+        @include _gridpush(5/8);
+    }
+    .o-grid--push-6--tab {
+        @include _gridpush(6/8);
+    }
+    .o-grid--push-7--tab, .o-grid--push-8--tab, .o-grid--push-9--tab, .o-grid--push-10--tab, .o-grid--push-11--tab {
+        @include _gridpush(7/8);
+    }
+}
+
+
+/* Tablet (8-column) - Fixed Container
+   ========================================================================== */
+
+@include mq-tablet-end() {
+    .o-container {
+        width: _rem($max-tablet-wrapper);
+    }
+}
+
+
+/* Desktop (12-column)
+   ========================================================================== */
+
+@include mq-desktop-start() {
+    .o-container {
+        width: 100%;
+        padding-left: _rem($global-gutter-desktop) ;
+        padding-right: _rem($global-gutter-desktop) ;
+    }
+    .o-grid {
+        padding-left: _rem($global-gutter-desktop) / 2;
+        padding-right: _rem($global-gutter-desktop) / 2;
+        margin-left: _rem($global-gutter-desktop) * -1;
+        margin-right: _rem($global-gutter-desktop) * -1;
+    }
+    .o-grid__cell {
+        padding-left: _rem($global-gutter-desktop) / 2;
+        padding-right: _rem($global-gutter-desktop) / 2;
+        margin-bottom: _rem($global-gutter-desktop);
+    }
+    .o-grid__cell--1 {
+        @include _gridcell(1/12);
+    }
+    .o-grid__cell--2 {
+        @include _gridcell(2/12);
+    }
+    .o-grid__cell--3 {
+        @include _gridcell(3/12);
+    }
+    .o-grid__cell--4 {
+        @include _gridcell(4/12);
+    }
+    .o-grid__cell--5 {
+        @include _gridcell(5/12);
+    }
+    .o-grid__cell--6 {
+        @include _gridcell(6/12);
+    }
+    .o-grid__cell--7 {
+        @include _gridcell(7/12);
+    }
+    .o-grid__cell--8 {
+        @include _gridcell(8/12);
+    }
+    .o-grid__cell--9 {
+        @include _gridcell(9/12);
+    }
+    .o-grid__cell--10 {
+        @include _gridcell(10/12);
+    }
+    .o-grid__cell--11 {
+        @include _gridcell(11/12);
+    }
+    .o-grid__cell--12 {
+        @include _gridcell(1);
+    }
+    .o-grid__cell--1--tab {
+        @include _gridcell(1/12);
+    }
+    .o-grid__cell--2--tab {
+        @include _gridcell(2/12);
+    }
+    .o-grid__cell--3--tab {
+        @include _gridcell(3/12);
+    }
+    .o-grid__cell--4--tab {
+        @include _gridcell(4/12);
+    }
+    .o-grid__cell--5--tab {
+        @include _gridcell(5/12);
+    }
+    .o-grid__cell--6--tab {
+        @include _gridcell(6/12);
+    }
+    .o-grid__cell--7--tab {
+        @include _gridcell(7/12);
+    }
+    .o-grid__cell--8--tab {
+        @include _gridcell(8/12);
+    }
+    .o-grid__cell--1--desk {
+        @include _gridcell(1/12);
+    }
+    .o-grid__cell--2--desk {
+        @include _gridcell(2/12);
+    }
+    .o-grid__cell--3--desk {
+        @include _gridcell(3/12);
+    }
+    .o-grid__cell--4--desk {
+        @include _gridcell(4/12);
+    }
+    .o-grid__cell--5-desk {
+        @include _gridcell(5/12);
+    }
+    .o-grid__cell--6--desk {
+        @include _gridcell(6/12);
+    }
+    .o-grid__cell--7--desk {
+        @include _gridcell(7/12);
+    }
+    .o-grid__cell--8--desk {
+        @include _gridcell(8/12);
+    }
+    .o-grid__cell--9--desk {
+        @include _gridcell(9/12);
+    }
+    .o-grid__cell--10--desk {
+        @include _gridcell(10/12);
+    }
+    .o-grid__cell--11--desk {
+        @include _gridcell(11/12);
+    }
+    .o-grid__cell--12--desk {
+        @include _gridcell(1);
+    }
+    .o-grid--push-1 {
+        @include _gridpush(1/12);
+    }
+    .o-grid--push-2 {
+        @include _gridpush(2/12);
+    }
+    .o-grid--push-3 {
+        @include _gridpush(3/12);
+    }
+    .o-grid--push-4 {
+        @include _gridpush(4/12);
+    }
+    .o-grid--push-5 {
+        @include _gridpush(5/12);
+    }
+    .o-grid--push-6 {
+        @include _gridpush(6/12);
+    }
+    .o-grid--push-7 {
+        @include _gridpush(7/12);
+    }
+    .o-grid--push-8 {
+        @include _gridpush(8/12);
+    }
+    .o-grid--push-9 {
+        @include _gridpush(9/12);
+    }
+    .o-grid--push-10 {
+        @include _gridpush(10/12);
+    }
+    .o-grid--push-11 {
+        @include _gridpush(11/12);
+    }
+    .o-grid--push-1--tab {
+        @include _gridpush(1/12);
+    }
+    .o-grid--push-2--tab {
+        @include _gridpush(2/12);
+    }
+    .o-grid--push-3--tab {
+        @include _gridpush(3/12);
+    }
+    .o-grid--push-4--tab {
+        @include _gridpush(4/12);
+    }
+    .o-grid--push-5--tab {
+        @include _gridpush(5/12);
+    }
+    .o-grid--push-6--tab {
+        @include _gridpush(6/12);
+    }
+    .o-grid--push-7--tab {
+        @include _gridpush(7/12);
+    }
+    .o-grid--push-8--tab {
+        @include _gridpush(8/12);
+    }
+    .o-grid--push-9--tab {
+        @include _gridpush(9/12);
+    }
+    .o-grid--push-10--tab {
+        @include _gridpush(10/12);
+    }
+    .o-grid--push-11--tab {
+        @include _gridpush(11/12);
+    }
+    .o-grid--push-1--desk {
+        @include _gridpush(1/12);
+    }
+    .o-grid--push-2--desk {
+        @include _gridpush(2/12);
+    }
+    .o-grid--push-3--desk {
+        @include _gridpush(3/12);
+    }
+    .o-grid--push-4--desk {
+        @include _gridpush(4/12);
+    }
+    .o-grid--push-5--desk {
+        @include _gridpush(5/12);
+    }
+    .o-grid--push-6--desk {
+        @include _gridpush(6/12);
+    }
+    .o-grid--push-7--desk {
+        @include _gridpush(7/12);
+    }
+    .o-grid--push-8--desk {
+        @include _gridpush(8/12);
+    }
+    .o-grid--push-9--desk {
+        @include _gridpush(9/12);
+    }
+    .o-grid--push-10--desk {
+        @include _gridpush(10/12);
+    }
+    .o-grid--push-11--desk {
+        @include _gridpush(11/12);
+    }
+}
+
+
+/* Desktop (12-column) - Fixed Container
+   ========================================================================== */
+
+@include mq-desktop-end() {
+    .o-container {
+        width: _rem($max-desktop-wrapper);
+    }
+}

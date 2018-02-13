@@ -1,0 +1,53 @@
+/* ==========================================================================
+   #LISTS
+   ========================================================================== */
+
+/**
+ * Mixins for lists.
+ *
+ *
+ */
+
+
+/* Unstyled List
+   ========================================================================== */
+
+@mixin list-unstyle() {
+    list-style: none;
+    margin-left: 0;
+    margin-bottom: 0;
+    padding-left: 0;
+    li{
+        padding-left: 0;
+    }
+}
+
+
+
+/* Inline List
+   ========================================================================== */
+
+@mixin list-inline() {
+    @include list-unstyle();
+    & > li{
+        display: inline-block;
+    }
+}
+
+
+/* List Separator
+   ========================================================================== */
+
+@mixin list-separator($separator) {
+    @include list-inline();
+    & > li::after{
+        content: $separator;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+    }
+    & > li:last-child::after{
+        content: '';
+        padding-left: 0;
+        padding-right: 0;
+    }
+}

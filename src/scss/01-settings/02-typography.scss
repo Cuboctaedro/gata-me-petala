@@ -1,0 +1,18 @@
+$global-font-sizes : (
+    'small'  : 14px 24px,
+    'medium' : 16px 24px,
+    'large'  : 18px 24px,
+    'mega'   : 24px 32px,
+    'giga'   : 40px 48px,
+    'tera'   : 72px 88px
+) !default;
+
+$global-font-size : nth(map-get($global-font-sizes, 'medium') , 1) !default;
+$global-line-height : nth(map-get($global-font-sizes, 'medium') , 2) !default;
+
+$global-fonts : (
+    'text'   : '"Source Sans Pro", sans-serif',
+    'titles' : '"Source Sans Pro", sans-serif'
+) !default;
+
+$global-font-family : map-get($global-fonts, 'text');

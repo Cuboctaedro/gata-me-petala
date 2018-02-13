@@ -1,0 +1,50 @@
+/* Border Side and Style
+   ========================================================================== */
+
+
+$border-side-values : (
+    'top'    : '-top',
+    'right'  : '-right',
+    'bottom' : '-bottom',
+    'left'   : '-left',
+    'all'    : ''
+);
+
+
+@each $key, $value in $border-side-values {
+    @each $stylename in (solid dotted dashed none){
+        .b-#{$key}--#{$stylename} {
+            border#{$value}-style: $stylename;
+        }
+    }
+}
+
+/* Border Width
+   ========================================================================== */
+
+$border-width-values : (
+    'no'      : 0,
+    'hair'    : 1px,
+    'small'   : 2px,
+    'medium'  : 4px,
+    'large'   : 8px,
+    'x-large' : 12px,
+    'mega'    : 24px
+) !default;
+
+
+@each $key, $value in $border-width-values {
+    .b-#{$key} {
+        border-width: $value;
+    }
+}
+
+
+/* Border Color
+   ========================================================================== */
+
+@each $key, $value in $global-colors {
+    .b-#{$key} {
+        border-color: $value;
+    }
+}

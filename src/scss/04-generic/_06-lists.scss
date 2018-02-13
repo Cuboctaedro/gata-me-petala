@@ -1,0 +1,51 @@
+/* ==========================================================================
+   #LISTS
+   ========================================================================== */
+
+$list-settings : (
+    'left_padding'    : 24px,
+    'bottom_margin'   : 24px
+)!default;
+
+
+
+/* UL
+   ========================================================================== */
+
+ul{
+    list-style: none;
+    margin-top: 0;
+    margin-bottom: map-get($list-settings, 'bottom_margin');
+    padding-left: 0;
+    li{
+        padding-left: map-get($list-settings, 'left_padding');
+    }
+}
+/* OL
+   ========================================================================== */
+
+ol{
+    margin-top: 0;
+    margin-bottom: map-get($list-settings, 'bottom_margin');
+    padding-left: 0;
+    margin-left:0;
+    & > li{
+        padding-left: map-get($list-settings, 'left_padding');
+    }
+}
+/* DL
+   ========================================================================== */
+
+dl{
+    margin-top: 0;
+    margin-bottom: map-get($list-settings, 'bottom_margin');
+}
+
+/* Nav ul
+   ========================================================================== */
+
+nav ul, nav li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}

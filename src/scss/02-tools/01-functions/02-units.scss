@@ -1,0 +1,51 @@
+/* ==========================================================================
+   #UNITS
+   ========================================================================== */
+
+/**
+ * Functions for unit changes.
+ *
+ */
+
+
+/* Remove units from number
+   ========================================================================== */
+
+@function _strip-unit($number) {
+    @if type-of($number) == 'number' and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+    @return $number;
+}
+
+
+/* Pixels to rems
+   ========================================================================== */
+
+@function _rem($num) {
+    @if type-of($num) == number {
+        @if unit($num) == 'px'{
+            @return _strip-unit($num / 16) * 1rem;
+        } @else {
+            @return $num;
+        }
+    } @else {
+        @return $num;
+    }
+}
+
+
+/* Pixels to ems (based on 16px font-size)
+   ========================================================================== */
+
+@function _em($num) {
+    @if type-of($num) == number {
+        @if unitless($num) or unit($num) == 'px'{
+            @return _strip-unit($num / 16) * 1em;
+        } @else {
+            @return $num;
+        }
+    } @else {
+        @return $num;
+    }
+}

@@ -1,0 +1,15 @@
+/* ==========================================================================
+   #CIRCLE
+   ========================================================================== */
+
+/**
+ * Shape an element to a circle (without applying any colors).
+ *
+ */
+
+@mixin circle($size) {
+    border-radius: 100%;
+    height: _rem($size);
+    width: _rem($size);
+    overflow: hidden;
+}

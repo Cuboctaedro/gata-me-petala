@@ -1,0 +1,24 @@
+/* ==========================================================================
+   #HTML
+   ========================================================================== */
+
+/**
+ * 1. Font-size in rem. Line-height unitless.
+ * 2. Prevent adjustments of font size after orientation changes in
+ *    IE on Windows Phone and in iOS. (normalize.css)
+ * 3. Force scrollbar.
+ */
+
+
+html{
+    @include textsize($global-font-size $global-line-height);
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    overflow-y: scroll;
+    font-family: unquote($global-font-family);
+    font-style: normal;
+    font-weight: normal;
+    color: $global-color-text;
+    background: $global-color-background;
+    height: 100%
+}

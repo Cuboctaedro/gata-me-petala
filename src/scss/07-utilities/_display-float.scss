@@ -1,0 +1,94 @@
+
+
+
+.block{
+    display: block;
+}
+.inline{
+    display: inline;
+}
+.in-block{
+    display: inline-block;
+}
+.none{
+    display: none;
+}
+.flex{
+    display: flex;
+}
+.f-left{
+    float: left;
+}
+.f-right{
+    float: right;
+}
+.f-none{
+    float: none;
+}
+@include mq-tablet() {
+    .block--tab {
+        display: block;
+    }
+    .inline--tab {
+        display: inline;
+    }
+    .in-block--tab {
+        display: inline-block;
+    }
+    .none--tab {
+        display: none;
+    }
+    .flex--tab {
+        display: flex;
+    }
+    .f-left--tab {
+        float: left;
+    }
+    .f-right--tab {
+        float: right;
+    }
+    .f-none--tab {
+        float: none;
+    }
+}
+
+@include mq-desktop() {
+    .block--desk {
+        display: block;
+    }
+    .inline--desk {
+        display: inline;
+    }
+    .in-block--desk {
+        display: inline-block;
+    }
+    .none--desk {
+        display: none;
+    }
+    .flex--desk {
+        display: flex;
+    }
+    .f-left--desk {
+        float: left;
+    }
+    .f-right--desk {
+        float: right;
+    }
+    .f-none--desk {
+        float: none;
+    }
+}
+
+
+
+.cf {
+    &::before{
+        content: "";
+        display: table-cell;
+    }
+    &::after{
+        content: "";
+        display: table;
+        clear: both;
+    }
+}

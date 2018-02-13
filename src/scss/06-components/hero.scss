@@ -1,0 +1,5 @@
+.c-hero-image {
+    background-size: cover;
+    background-position: center;
+    @include aspect-ratio(3, 1);
+}

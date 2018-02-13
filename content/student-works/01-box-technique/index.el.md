@@ -29,5 +29,4 @@ resources :
     name : "Σταυρούλα Παπάτου - Σκουλαρίκια"
   - src : "14-MargaritaAlexandridi-01.jpg"
     name : "Μαργαρίτα Αλεξανδρίδη - Κρεμαστό"
-
 ---

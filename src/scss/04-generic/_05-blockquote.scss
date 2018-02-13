@@ -1,0 +1,17 @@
+/* ==========================================================================
+   #BLOCKQUOTE
+   ========================================================================== */
+
+/**
+ * 1. Apply module-related margins.
+ *
+ */
+
+
+
+blockquote{
+    margin-top: _rem(3 * $global-module);
+    margin-bottom: _rem(3 * $global-module);
+    margin-left: _rem(6 * $global-module);
+    margin-right: _rem(6 * $global-module);
+}

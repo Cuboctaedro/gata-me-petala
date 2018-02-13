@@ -1,0 +1,13 @@
+.s-generated {
+    @include textsize(16 24);
+    p {
+        @include margin(get-spacing('three'), 'bottom');
+    }
+    p:last-child {
+        margin-bottom:0;
+    }
+    a {
+        color: get-color('white');
+        @include underline-l2r();
+    }
+}

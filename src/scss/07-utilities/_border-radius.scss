@@ -1,0 +1,52 @@
+/* ==========================================================================
+   #BORDER RADIUS CLASSES
+   ========================================================================== */
+
+/**
+ * Generate utility classes for applying border-radius.
+ *
+ * Uses: mixins/_border-radius.scss
+ *
+ * $sw-border-radius-values : (
+ *     '0' : 0,
+ *     '1' : 2px,
+ *     '2' : 4px,
+ *     '3' : 8px,
+ *     '4' : 16px
+ * ) !default;
+ *
+ */
+
+
+/* Base class
+   ========================================================================== */
+
+@each $key, $val in $sw-border-radius-values {
+    .u-b_rad--#{$key} {
+        @include sw-b_rad($key);
+    }
+}
+
+
+/* Tablet and larger
+   ========================================================================== */
+
+@include _mq-tablet() {
+    @each $key, $val in $sw-border-radius-values {
+        .u-b_rad--#{$key}--tab {
+            @include sw-b_rad($key);
+        }
+    }
+}
+
+
+/* Desktop and larger
+   ========================================================================== */
+
+@include _mq-desktop() {
+    @each $key, $val in $sw-border-radius-values {
+        .u-b_rad--#{$key}--desk {
+            @include sw-b_rad($key);
+        }
+    }
+}

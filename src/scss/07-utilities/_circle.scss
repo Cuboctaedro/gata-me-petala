@@ -1,0 +1,23 @@
+/* ==========================================================================
+   #CIRCLE
+   ========================================================================== */
+
+/**
+ * Shape an element to a circle (without applying any colors).
+ *
+ */
+
+
+$circle-sizes : (
+    'small'   : 24px,
+    'medium'  : 32px,
+    'large'   : 48px,
+    'x-large' : 72px
+) !default;
+
+
+@each $key, $value in $circle-sizes {
+    .circle--#{$key} {
+        @include circle($value);
+    }
+}

@@ -1,0 +1,44 @@
+/* ==========================================================================
+   #WIDTH CLASSES
+   ========================================================================== */
+
+/**
+ * Generate utility classes for applying width.
+ *
+ *
+ *
+ */
+
+
+/* Width
+   ========================================================================== */
+
+@each $key, $val in $global-sizing {
+    .w-#{$key} {
+        width: _rem($val);
+    }
+}
+
+
+/* Width - Tablet and larger
+   ========================================================================== */
+
+@include mq-tablet() {
+    @each $key, $val in $global-sizing {
+        .w-#{$key}--tab {
+            width: _rem($val);
+        }
+    }
+}
+
+
+/* Width - Desktop and larger
+   ========================================================================== */
+
+@include mq-desktop() {
+    @each $key, $val in $global-sizing {
+        .w-#{$key}--desk {
+            width: _rem($val);
+        }
+    }
+}

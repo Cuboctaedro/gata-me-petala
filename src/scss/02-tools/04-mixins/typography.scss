@@ -1,0 +1,52 @@
+/* ==========================================================================
+   #TYPOGRAPHY MIXINS
+   ========================================================================== */
+
+/**
+ * Mixins for typography-related properties.
+ *
+ */
+
+
+
+/* Letter Spacing
+   ========================================================================== */
+
+$letter-spacing-values : (
+    'tight'  : -0.05em,
+    'normal' : 0,
+    'wide'   : 0.1em,
+    'loose'  : 0.25em
+)!default;
+
+@mixin letter-spacing($space) {
+    @if map-has-key($letter-spacing-values, $space) {
+        letter-spacing: map-get($letter-spacing-values, $space);
+    } @else {
+        letter-spacing: $space;
+    }
+}
+
+
+/* Text Decoration
+   ========================================================================== */
+
+
+@mixin underline($type) {
+    @if $type == 'line' {
+        border-bottom: 1px solid;
+        text-decoration: none;
+    } @else if $type == 'dot' {
+        border-bottom: 1px dotted;
+        text-decoration: none;
+    }
+}
+
+
+/* Text Size
+   ========================================================================== */
+
+@mixin textsize($list) {
+    font-size: _rem(nth($list, 1));
+    line-height: _strip-unit(nth($list, 2) / nth($list, 1));
+}

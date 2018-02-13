@@ -1,0 +1,67 @@
+/* ==========================================================================
+   #INLINE ELEMENTS
+   ========================================================================== */
+
+
+
+$inline-settings : (
+    'abbr_decoration'      : dot,
+    'bold_weight'          : 700,
+    'underline_decoration' : line,
+    'mark_background'      : #fff59d,
+    'small_font_size'      : 14px
+)!default;
+
+abbr{
+    @include underline(map-get($inline-settings, 'abbr_decoration'));
+}
+
+b,
+strong{
+    font-weight: inherit;
+    font-weight: normal;
+    font-family: GillSansNova-Bold;
+}
+code,
+kbd,
+samp{
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+dfn{
+    font-style: italic;
+}
+
+ins,
+u{
+    @include underline(map-get($inline-settings, 'underline_decoration'));
+}
+
+mark{
+    color: $global-color-text;
+    background-color: map-get($inline-settings, 'mark_background');
+}
+
+small{
+    @include textsize(map-get($inline-settings, 'small_font_size') $global-line-height );
+}
+
+sub,
+sup{
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+sub{
+    bottom: -0.25em;
+}
+sup{
+    top: -0.5em;
+}
+i, em{
+    font-family: GillSansNova-BookItalic;
+	font-weight: normal;
+	font-style: normal;
+}

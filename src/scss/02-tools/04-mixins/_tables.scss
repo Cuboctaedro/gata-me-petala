@@ -1,0 +1,96 @@
+/* ==========================================================================
+   #TABLE
+   ========================================================================== */
+
+/**
+ * Mixins and clses for tables.
+ *
+ *
+ */
+
+
+/* Defaults
+   ========================================================================== */
+
+
+$table-defaults : (
+    'size-small-vertical'    : 0,
+    'size-small-horizontal'  : 0,
+    'size-medium-vertical'   : 0.5 * $global-module,
+    'size-medium-horizontal' : 0.5 * $global-module,
+    'size-large-vertical'    : $global-module,
+    'size-large-horizontal'  : $global-module,
+) !default;
+
+
+
+/* Basic mixin
+   ========================================================================== */
+
+
+@mixin table-base() {
+    width: 100%;
+
+    margin-bottom: 3 * $global-module;
+    border-collapse: collapse;
+    border-spacing: 0;
+
+    caption {
+        text-align: left;
+    }
+    th,
+    td {
+        text-align: left;
+        vertical-align: top;
+    }
+    thead th {
+        vertical-align: bottom;
+    }
+}
+
+
+
+/* Size mixin
+   ========================================================================== */
+
+
+@mixin table-size($size) {
+    caption,
+    th,
+    td {
+        @if $size == 'small' {
+            padding-top: map-get($table-defaults, 'size-small-vertical');
+            padding-bottom: map-get($table-defaults, 'size-small-vertical');
+            padding-left: map-get($table-defaults, 'size-small-horizontal');
+            padding-right: map-get($table-defaults, 'size-small-horizontal');
+        } @else if $size == 'medium' {
+            padding-top: map-get($table-defaults, 'size-medium-vertical');
+            padding-bottom: map-get($table-defaults, 'size-medium-vertical');
+            padding-left: map-get($table-defaults, 'size-medium-horizontal');
+            padding-right: map-get($table-defaults, 'size-medium-horizontal');
+        } @else if $size == 'large' {
+            padding-top: map-get($table-defaults, 'size-large-vertical');
+            padding-bottom: map-get($table-defaults, 'size-large-vertical');
+            padding-left: map-get($table-defaults, 'size-large-horizontal');
+            padding-right: map-get($table-defaults, 'size-large-horizontal');
+        }
+    }
+}
+
+
+
+/* Color mixins
+   ========================================================================== */
+
+
+@mixin table-line($color) {
+    tbody tr{
+        border-top: 1px solid $color;
+    }
+}
+
+@mixin table-solid($color) {
+    tbody tr:nth-child(odd) {
+        background-color: $color;
+    }
+}

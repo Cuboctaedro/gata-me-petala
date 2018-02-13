@@ -1,0 +1,34 @@
+
+
+@mixin margin($size, $side: 'all') {
+    @if $side == 'all'{
+        @if unit($size) == px {
+            margin: _rem($size);
+        } @else {
+            margin: $size ;
+        }
+    } @else {
+        @if unit($size) == px {
+            margin-#{$side}: _rem($size);
+        } @else {
+            margin-#{$side}: $size ;
+        }
+    }
+}
+
+
+@mixin padding($size, $side: 'all') {
+    @if $side == 'all'{
+        @if unit($size) == px {
+            padding: _rem($size);
+        } @else {
+            padding: $size ;
+        }
+    } @else {
+        @if unit($size) == px {
+            padding-#{$side}: _rem($size);
+        } @else {
+            padding-#{$side}: $size ;
+        }
+    }
+}

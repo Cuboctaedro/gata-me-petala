@@ -1,0 +1,139 @@
+
+
+$navbar-item-padding : $global-module * 1.5 !default;
+$navbar-item-height : $global-navbar-height ;
+$navbar-submenu-width: $global-module * 24 !default;
+$navbar-background : get-color('blue') !default;
+$navbar-color: get-color('white') !default;
+
+
+.o-navbar-container {
+    @include fixed--top($navbar-item-height);
+    @include cf();
+    a {
+        white-space: nowrap;
+    }
+    ul {
+        @include list-unstyle();
+    }
+}
+.o-nav {
+    display: block;
+    width: 100%;
+    & > li {
+        display: block;
+        & > a {
+            display: block;
+            line-height: _rem($navbar-item-height);
+            padding-left: _rem($navbar-item-padding);
+            padding-right: _rem($navbar-item-padding);
+            @include skin($navbar-color, $navbar-background);
+        }
+    }
+}
+.o-navbar {
+    display: inline-block;
+    width: auto;
+    & > li {
+        display: inline-block;
+        float: left;
+        & > a {
+            display: block;
+            line-height: _rem($navbar-item-height);
+            padding-left: _rem($navbar-item-padding);
+            padding-right: _rem($navbar-item-padding);
+            @include skin($navbar-color, $navbar-background);
+            text-align: center;
+        }
+    }
+}
+.o-navbar--left {
+    float: left;
+    display: inline-block;
+}
+.o-navbar--right {
+    float: right;
+    display: inline-block;
+}
+@include mq-tablet() {
+    .o-nav--tab {
+        display: block;
+        width: 100%;
+        @include cf();
+        & > li {
+            display: block;
+            & > a {
+                display: block;
+                line-height: _rem($navbar-item-height);
+                padding-left: _rem($navbar-item-padding);
+                padding-right: _rem($navbar-item-padding);
+                @include skin($navbar-color, $navbar-background);
+            }
+        }
+    }
+    .o-navbar--tab {
+        display: inline-block;
+        width: auto;
+        & > li {
+            display: inline-block;
+            float: left;
+            & > a {
+                display: block;
+                line-height: _rem($navbar-item-height);
+                padding-left: _rem($navbar-item-padding);
+                padding-right: _rem($navbar-item-padding);
+                @include skin($navbar-color, $navbar-background);
+                text-align: center;
+            }
+        }
+    }
+    .o-navbar--left--tab {
+        float: left;
+        display: inline-block;
+    }
+    .o-navbar--right--tab {
+        float: right;
+        display: inline-block;
+    }
+}
+@include mq-desktop() {
+    .o-navbar--left--desk {
+        float: left;
+        display: inline-block;
+    }
+    .o-navbar--right--desk {
+        float: right;
+        display: inline-block;
+    }
+    .o-nav--desk {
+        display: block;
+        width: 100%;
+        @include cf();
+        & > li {
+            display: block;
+            & > a {
+                display: block;
+                line-height: _rem($navbar-item-height);
+                padding-left: _rem($navbar-item-padding);
+                padding-right: _rem($navbar-item-padding);
+                @include skin($navbar-color, $navbar-background);
+            }
+        }
+    }
+    .o-navbar--desk {
+        display: inline-block;
+        width: auto;
+        & > li {
+            display: inline-block;
+            float: left;
+            & > a {
+                display: block;
+                line-height: _rem($navbar-item-height);
+                padding-left: _rem($navbar-item-padding);
+                padding-right: _rem($navbar-item-padding);
+                @include skin($navbar-color, $navbar-background);
+                text-align: center;
+            }
+        }
+    }
+}

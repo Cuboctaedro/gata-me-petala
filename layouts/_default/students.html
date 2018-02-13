@@ -10,33 +10,33 @@
                     <h2 class="fs-giga titlefont mb-three b-top--solid b-hair pt-one">{{ .Title }}</h2>
                 </header>
             </div>
-            <div class="o-grid mb-nine" itemscope itemtype="http://schema.org/ImageGallery">
-            {{ range .Resources.ByType "image" }}
-            {{ $image := .Resize "x310" }}
+            <div class="o-grid mb-nine lightbox-gallery" itemscope itemtype="http://schema.org/ImageGallery">
+            {{ range $index, $element := (.Resources.ByType "image") }}
+            {{ $image := $element.Resize "x310" }}
                 {{ if gt .Width .Height}}
-                <figure class="o-grid__cell o-grid__cell--4of8--tab o-grid__cell--4of12--desk c-card" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                    {{/* <a href="{{ .Permalink }}" rel="modal:open" itemprop="contentUrl"> */}}
-                        <div class="c-card__image o-aspect-ratio--landscape"  style="background-image: url({{ $image.RelPermalink }});">
-                            <img class="visually-hidden" src="{{ $image.RelPermalink }}" alt="{{ .Name }}">
-                        </div>
-                    {{/* </a> */}}
+                <a href="{{ $element.Permalink }}" class="o-grid__cell o-grid__cell--4of8--tab o-grid__cell--4of12--desk c-card" data-caption="{{ $element.Name }}">
+                <figure itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                    <div class="c-card__image o-aspect-ratio--landscape"  style="background-image: url({{ $image.RelPermalink }});">
+                        <img class="visually-hidden" src="{{ $image.RelPermalink }}" alt="{{ $element.Name }}">
+                    </div>
                 </figure>
+                </a>
                 {{ else if lt .Width .Height}}
-                <figure class="o-grid__cell o-grid__cell--2of8--tab o-grid__cell--2of12--desk c-card" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                    {{/* <a href="{{ .Permalink }}" rel="modal:open" itemprop="contentUrl"> */}}
-                        <div class="c-card__image o-aspect-ratio--portrait"  style="background-image: url({{ $image.RelPermalink }});">
-                            <img class="visually-hidden" src="{{ $image.RelPermalink }}" alt="{{ .Name }}">
-                        </div>
-                    {{/* </a> */}}
+                <a href="{{ $element.Permalink }}" class="o-grid__cell o-grid__cell--2of8--tab o-grid__cell--2of12--desk c-card" data-caption="{{ $element.Name }}">
+                <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                    <div class="c-card__image o-aspect-ratio--portrait"  style="background-image: url({{ $image.RelPermalink }});">
+                        <img class="visually-hidden" src="{{ $image.RelPermalink }}" alt="{{ $element.Name }}">
+                    </div>
                 </figure>
+                </a>
                 {{ else }}
-                <figure class="o-grid__cell o-grid__cell--3of8--tab o-grid__cell--3of12--desk c-card" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                    {{/* <a href="{{ .Permalink }}" rel="modal:open" itemprop="contentUrl"> */}}
-                        <div class="c-card__image o-aspect-ratio--square"  style="background-image: url({{ $image.RelPermalink }});">
-                            <img class="visually-hidden" src="{{ $image.RelPermalink }}" alt="{{ .Name }}">
-                        </div>
-                    {{/* </a> */}}
+                <a href="{{ $element.Permalink }}" class="o-grid__cell o-grid__cell--3of8--tab o-grid__cell--3of12--desk c-card" data-caption="{{ $element.Name }}">
+                <figure  itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                    <div class="c-card__image o-aspect-ratio--square"  style="background-image: url({{ $image.RelPermalink }});">
+                        <img class="visually-hidden" src="{{ $image.RelPermalink }}" alt="{{ $element.Name }}">
+                    </div>
                 </figure>
+                </a>
                 {{ end }}
             {{ end }}
             </div>

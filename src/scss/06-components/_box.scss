@@ -1,0 +1,36 @@
+
+.inverted {
+    @include skin($color: $global-color-background, $background: $global-color-text);
+}
+.inverted--accent {
+    @include skin($color: $global-color-background, $background: $global-color-accent);
+}
+
+
+@mixin raise($from, $to) {
+    box-shadow: unquote(map_get($global-box-shadows, $from));
+    @include hover() {
+        box-shadow: unquote(map_get($global-box-shadows, $to));
+    }
+}
+
+
+.raise--0-2{
+    @include raise('zero', 'two');
+    }
+
+.raise--2-4{
+    @include raise('two', 'four');
+}
+
+.c-overlay-box{
+    background-color: rgba($global-color-text ,0.5);
+    padding: $global-module * 3;
+    margin-left: $global-module * -3;
+    p {
+        margin-bottom: $global-module * 2;
+    }
+    p:last-child {
+        margin-bottom:0;
+    }
+}

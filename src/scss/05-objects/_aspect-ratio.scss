@@ -1,0 +1,87 @@
+/* ==========================================================================
+   #ASPECT RATIO
+   ========================================================================== */
+
+/**
+ * Classes for fixed aspect ratio responsive contaners.
+ * The container should have as unique child a div element.
+ * Content should be placed inside the child div.
+ *
+ */
+
+/* Mixin
+   ========================================================================== */
+
+@mixin aspect-ratio__inner() {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+}
+
+
+@mixin aspect-ratio($width, $height) {
+    height: 0;
+    position: relative;
+    padding-bottom: ($height / $width) * 100%;
+    & > div {
+        @include aspect-ratio__inner();
+    }
+}
+
+/* Classes
+   ========================================================================== */
+
+.o-aspect-ratio--4-3{
+    @include aspect-ratio(4, 3);
+}
+.o-aspect-ratio--2-3{
+    @include aspect-ratio(2, 3);
+}
+.o-aspect-ratio--3-3{
+    @include aspect-ratio(3, 3);
+}
+
+.o-aspect-ratio--landscape {
+    @include aspect-ratio(413, 297);
+}
+
+.o-aspect-ratio--portrait {
+    @include aspect-ratio(187, 297);
+}
+
+.o-aspect-ratio--square {
+    @include aspect-ratio(299, 297);
+}
+
+.o-aspect-ratio__inner {
+    @include aspect-ratio__inner();
+}
+/* Fit image in aspect ratio container.
+   ========================================================================== */
+
+.o-image-fit--height > img{
+    display: block;
+    height: 100%;
+    width: auto;
+}
+.o-image-fit--width > img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+
+.map-wrapper{
+    @include aspect-ratio(840, 460);
+    overflow: hidden;
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+}

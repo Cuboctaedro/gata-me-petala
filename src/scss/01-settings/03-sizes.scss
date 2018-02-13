@@ -1,0 +1,31 @@
+$global-sizing : (
+    'zero'     : 0,
+    'three'    : $global-module * 3,   // 24px
+    'four'     : $global-module * 4,   // 32px
+    'five'     : $global-module * 5,   // 40px
+    'six'      : $global-module * 6,   // 48px
+    'seven'    : $global-module * 7,   // 56px
+    'eight'    : $global-module * 8,   // 64px
+    'nine'     : $global-module * 9,   // 72px
+    '12'       : $global-module * 12,  // 96px
+    '15'       : $global-module * 15,  // 120px
+    '18'       : $global-module * 18,  // 144px
+    '24'       : $global-module * 24,  // 192px
+    '30'       : $global-module * 30,  // 240px
+    'p25'      : 25%,
+    'p50'      : 50%,
+    'p75'      : 75%,
+    'p100'     : 100%
+) !default;
+
+$global-spacing : (
+    'zero'     : 0,
+    'half'     : $global-module * 0.5, // 4px
+    'one'      : $global-module,       // 8px
+    'one-half' : $global-module * 1.5, // 12px
+    'two'      : $global-module * 2,   // 16px
+    'three'    : $global-module * 3,   // 24px
+    'six'      : $global-module * 6,   // 48px
+    'nine'     : $global-module * 9,   // 72px
+    '12'       : $global-module * 12   // 96px
+) !default;

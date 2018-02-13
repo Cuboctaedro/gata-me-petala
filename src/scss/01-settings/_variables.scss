@@ -1,0 +1,95 @@
+/* Grid
+   ========================================================================== */
+
+$global-module             : 8px !default;
+
+$global-gutter-phone       : $global-module !default;
+$global-gutter-tablet      : 2 * $global-module !default;
+$global-gutter-desktop     : 3 * $global-module !default;
+$global-min-module-phone   : 9 * $global-module !default;
+$global-max-module-phone   : 13 * $global-module !default;
+$global-min-module-tablet  : 8 * $global-module !default;
+$global-max-module-tablet  : 12 * $global-module !default;
+$global-min-module-desktop : 8 * $global-module !default;
+$global-max-module-desktop : 12 * $global-module !default;
+$global-columns-phone      : 4 !default;
+$global-columns-tablet     : 8 !default;
+$global-columns-desktop    : 12 !default;
+
+$global-font-sizes : (
+    'small'  : 14px 24px,
+    'medium' : 16px 24px,
+    'large'  : 18px 24px,
+    'mega'   : 24px 32px,
+    'giga'   : 40px 48px,
+    'tera'   : 72px 88px
+) !default;
+
+$global-font-size : nth(map-get($global-font-sizes, 'medium') , 1) !default;
+$global-line-height : nth(map-get($global-font-sizes, 'medium') , 2) !default;
+
+$global-fonts : (
+    'text'   : 'Arial',
+    'titles' : 'Arial'
+) !default;
+
+$global-font-family : map-get($global-fonts, 'text');
+
+
+$global-colors : (
+    'text'        : #4b4b4b,
+    'primary'     : #d9bb7a,
+    'accent'      : #f2f0f1,
+    'background'  : #90bcbb
+) !default;
+
+$global-color-accent : map-get($global-colors, 'accent');
+$global-color-background : map-get($global-colors, 'background');
+$global-color-text : map-get($global-colors, 'text');
+
+
+
+$global-sizing : (
+    'zero'     : 0,
+    'three'    : $global-module * 3,   // 24px
+    'four'     : $global-module * 4,   // 32px
+    'five'     : $global-module * 5,   // 40px
+    'six'      : $global-module * 6,   // 48px
+    'seven'    : $global-module * 7,   // 56px
+    'eight'    : $global-module * 8,   // 64px
+    'nine'     : $global-module * 9,   // 72px
+    '12'       : $global-module * 12,  // 96px
+    '15'       : $global-module * 15,  // 120px
+    '18'       : $global-module * 18,  // 144px
+    '24'       : $global-module * 24,  // 192px
+    '30'       : $global-module * 30,  // 240px
+    'p25'      : 25%,
+    'p50'      : 50%,
+    'p75'      : 75%,
+    'p100'     : 100%
+) !default;
+
+$global-spacing : (
+    'zero'     : 0,
+    'half'     : $global-module * 0.5, // 4px
+    'one'      : $global-module,       // 8px
+    'one-half' : $global-module * 1.5, // 12px
+    'two'      : $global-module * 2,   // 16px
+    'three'    : $global-module * 3,   // 24px
+    'six'      : $global-module * 6,   // 48px
+    'nine'     : $global-module * 9,   // 72px
+    '12'       : $global-module * 12   // 96px
+) !default;
+
+$global-box-shadows : (
+    'zero'  : 'none',
+    'one'   : '0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12)',
+    'two'   : '0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 1px 8px 0 rgba(0, 0, 0, 0.12)',
+    'three' : '0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.12)',
+    'four'  : '0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.2), 0 3px 5px -1px rgba(0, 0, 0, 0.12)',
+    'five'  : '0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.2), 0 5px 5px -3px rgba(0, 0, 0, 0.12)',
+    'six'   : '0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.2), 0 8px 10px -5px rgba(0, 0, 0, 0.12)',
+    'seven' : '0 9px 46px 8px rgba(0, 0, 0, 0.14), 0 11px 15px -7px rgba(0, 0, 0, 0.2), 0 24px 38px 3px rgba(0, 0, 0, 0.12)'
+) !default;
+
+$global-navbar-height : $global-module * 6 !default;   // 48px

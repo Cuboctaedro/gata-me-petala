@@ -1,0 +1,94 @@
+/* ==========================================================================
+   #POSITION AND COORDINATES
+   ========================================================================== */
+
+/**
+ * Apply position and top, right, bottom and left properties.
+ *
+ */
+
+.static{
+    position: static;
+    }
+.relative{
+    position: relative;
+}
+.absolute{
+    position: absolute;
+}
+.fixed{
+    position: fixed;
+}
+
+@each $key, $value in $global-sizing {
+    .top-#{$key} {
+        top: _rem($value);
+    }
+    .right-#{$key} {
+        right: _rem($value);
+    }
+    .bottom-#{$key} {
+        bottom: _rem($value);
+    }
+    .left-#{$key} {
+        left: _rem($value);
+    }
+}
+
+@include mq-tablet() {
+    .static--tab {
+        position: static;
+        }
+    .relative--tab {
+        position: relative;
+    }
+    .absolute--tab {
+        position: absolute;
+    }
+    .fixed--tab {
+        position: fixed;
+    }
+    @each $key, $value in $global-sizing {
+        .top-#{$key}--tab {
+            top: _rem($value);
+        }
+        .right-#{$key}--tab {
+            right: _rem($value);
+        }
+        .bottom-#{$key}--tab {
+            bottom: _rem($value);
+        }
+        .left-#{$key}--tab {
+            left: _rem($value);
+        }
+    }
+}
+
+@include mq-desktop() {
+    .static--desk {
+        position: static;
+        }
+    .relative--desk {
+        position: relative;
+    }
+    .absolute--desk {
+        position: absolute;
+    }
+    .fixed--desk {
+        position: fixed;
+    }
+    @each $key, $value in $global-sizing {
+        .top-#{$key}--desk {
+            top: _rem($value);
+        }
+        .right-#{$key}--desk {
+            right: _rem($value);
+        }
+        .bottom-#{$key}--desk {
+            bottom: _rem($value);
+        }
+        .left-#{$key}--desk {
+            left: _rem($value);
+        }
+    }
+}

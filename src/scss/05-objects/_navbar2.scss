@@ -1,0 +1,69 @@
+
+
+$navbar-item-padding : $global-module * 1.5 !default;
+$navbar-item-height : $global-module * 6 !default;
+$navbar-submenu-width: $global-module * 24 !default;
+$navbar-background : $global-color-text !default;
+$navbar-color: $global-color-background !default;
+
+
+.o-navbar {
+    display: flex;
+    height: _rem($navbar-item-height);
+    @include skin($color: $global-color-background, $background: $global-color-text);
+    @include shadow('two');
+}
+.o-navbar__left {
+    justify-content: flex-start;
+}
+.o-navbar__right {
+    justify-content: flex-end;
+}
+.o-navbar__center {
+    justify-content: center;
+}
+
+.o-navbar__left,
+.o-navbar__right,
+.o-navbar__center {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+.o-navbar__item, .o-navbar__subitem {
+    display: flex;
+    align-items: center;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: _rem($navbar-item-height);
+    & > a {
+        padding-left: _rem($navbar-item-padding);
+        padding-right: _rem($navbar-item-padding);
+    }
+}
+
+.js-dropdown {
+    position: relative;
+}
+.js-dropdown__target {
+    position: absolute;
+    top: 100%;
+    min-width: _rem($navbar-submenu-width);
+    z-index: 9999;
+    @include skin($color: $global-color-background, $background: $global-color-text);
+    @include shadow('three');
+}
+
+.o-navbar__responsive {
+    flex-direction: column;
+    @include skin($color: $global-color-background, $background: $global-color-text);
+    @include mq-tablet() {
+        flex-direction: row;
+        display: flex;
+    }
+}
+.js-navbar__toggle {
+    @include mq-tablet() {
+        display: none;
+    }
+}

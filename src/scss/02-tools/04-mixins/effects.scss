@@ -1,0 +1,33 @@
+@mixin underline-l2r($color: get-color('white')) {
+    position: relative;
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 1px;
+        background-color: $color;
+        transition: width 0.3s;
+        transition-timing-function: ease;
+    }
+    @include hover() {
+        &::after{
+            width: 100%;
+        }
+    }
+}
+
+@keyframes fadein{
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@mixin fadein() {
+    animation: fadein 3s ease-out;
+}

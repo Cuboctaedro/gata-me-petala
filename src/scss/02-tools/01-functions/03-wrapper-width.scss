@@ -1,0 +1,52 @@
+/* ==========================================================================
+   #WRAPPER WIDTH
+   ========================================================================== */
+
+/**
+ * Calculates the necessary width that wrapper should have to accomodate a
+ * specific number of columns of a fixed width and gutter.
+ *
+ */
+
+@function _wrapperwidth($cols, $module, $gutter) {
+    @return $module * $cols + (($cols - 1) * $gutter);
+}
+
+/* Start 4-column fluid (phone)
+   ========================================================================== */
+
+$min-phone-wrapper :
+    _wrapperwidth( $global-columns-phone, $global-min-module-phone, $global-gutter-phone );
+
+
+/* Start 4-column fixed
+   ========================================================================== */
+
+$max-phone-wrapper :
+    _wrapperwidth( $global-columns-phone, $global-max-module-phone, $global-gutter-phone );
+
+
+/* Start 8-column fluid (tablet)
+   ========================================================================== */
+
+$min-tablet-wrapper :
+    _wrapperwidth( $global-columns-tablet, $global-min-module-tablet, $global-gutter-tablet );
+
+
+/* Start 8-column fixed
+   ========================================================================== */
+
+$max-tablet-wrapper :
+    _wrapperwidth( $global-columns-tablet, $global-max-module-tablet, $global-gutter-tablet );
+
+
+/* Start 12-column fluid (desktop)
+   ========================================================================== */
+
+$min-desktop-wrapper :
+    _wrapperwidth( $global-columns-desktop, $global-min-module-desktop, $global-gutter-desktop );
+
+/* Start 12-column fixed
+   ========================================================================== */
+$max-desktop-wrapper :
+    _wrapperwidth( $global-columns-desktop, $global-max-module-desktop, $global-gutter-desktop );

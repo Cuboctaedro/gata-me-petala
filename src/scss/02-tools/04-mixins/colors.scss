@@ -1,0 +1,27 @@
+
+@mixin color($color) {
+    color: $color;
+    fill: $color;
+    & * {
+        fill: $color;
+    }
+}
+
+@mixin link-color($color) {
+    & a {
+        color: $color;
+        & * {
+            fill: $color;
+        }
+    }
+}
+
+@mixin background-color($color) {
+    background: $color;
+}
+
+@mixin skin($color, $background, $link-color: $color) {
+    @include color($color);
+    @include background-color($background);
+    @include link-color($link-color);
+}

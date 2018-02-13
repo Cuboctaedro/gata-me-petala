@@ -1,0 +1,17 @@
+/* ==========================================================================
+   #FRAME
+   ========================================================================== */
+
+/**
+ * Centers contents horizontaly and vertically.
+ *
+ */
+
+
+
+
+.o-frame{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

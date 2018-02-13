@@ -1,0 +1,15 @@
+/* ==========================================================================
+   #LINK
+   ========================================================================== */
+
+/**
+ * 1. Remove underline.
+ * 2. Accent is default link color.
+ *
+ */
+
+a{
+    text-decoration: none;
+    color: $global-color-accent;
+    background-color: transparent;
+}

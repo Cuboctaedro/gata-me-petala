@@ -1,0 +1,57 @@
+/* ==========================================================================
+   #MARGIN CLASSES
+   ========================================================================== */
+
+/**
+ * Generate utility classes for margin.
+ *
+ *
+ */
+
+$margin-side-values : (
+    'm'  : '',
+    'mt' : '-top',
+    'mr' : '-right',
+    'mb' : '-bottom',
+    'ml' : '-left'
+) ;
+
+
+ /* Base class
+    ========================================================================== */
+
+@each $side-key, $side-val in $margin-side-values {
+    @each $width-key, $width-val in $global-spacing {
+        .#{$side-key}-#{$width-key} {
+            margin#{$side-val}: _rem($width-val);
+        }
+    }
+}
+
+
+/* Tablet and larger
+   ========================================================================== */
+
+@include mq-tablet() {
+    @each $side-key, $side-val in $margin-side-values {
+        @each $width-key, $width-val in $global-spacing {
+            .#{$side-key}-#{$width-key}--tab {
+                margin#{$side-val}: _rem($width-val);
+            }
+        }
+    }
+}
+
+
+/* Desktop and larger
+   ========================================================================== */
+
+@include mq-desktop() {
+    @each $side-key, $side-val in $margin-side-values {
+        @each $width-key, $width-val in $global-spacing {
+            .#{$side-key}-#{$width-key}--desk {
+                margin#{$side-val}: _rem($width-val);
+            }
+        }
+    }
+}

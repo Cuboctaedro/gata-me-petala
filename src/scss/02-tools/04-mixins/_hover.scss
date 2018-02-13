@@ -1,0 +1,28 @@
+/* ==========================================================================
+   #HOVER
+   ========================================================================== */
+
+/**
+ * Hover selectors for applying hover styles.
+ *
+ */
+
+@mixin hover() {
+    &:hover,
+    &:focus{
+        @content;
+    }
+}
+
+@mixin active() {
+    &:active{
+        @content;
+    }
+}
+
+@mixin focus() {
+    &:focus,
+    &[aria-selected="true"]{
+        @content;
+    }
+}

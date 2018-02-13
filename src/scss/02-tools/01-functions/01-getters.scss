@@ -1,0 +1,43 @@
+@function get-color($name) {
+    @if map-has-key($global-colors, $name) {
+        @return map-get($global-colors, $name);
+    } @else {
+        @warn "No color #{$name} in $global-colors.";
+    }
+}
+
+
+@function get-box-shadow($name) {
+    @if map-has-key($global-box-shadows, $name) {
+        @return map-get($global-box-shadows, $name);
+    } @else {
+        @warn "No shadow #{$name} in $global-box-shadows.";
+    }
+}
+
+
+@function get-spacing($name) {
+    @if map-has-key($global-spacing, $name) {
+        @return map-get($global-spacing, $name);
+    } @else {
+        @warn "No spacing #{$name} in $global-spacing.";
+    }
+}
+
+
+@function get-size($name) {
+    @if map-has-key($global-sizing, $name) {
+        @return map-get($global-sizing, $name);
+    } @else {
+        @warn "No size #{$name} in $global-sizing.";
+    }
+}
+
+
+@function get-textsize($name) {
+    @if map-has-key($global-font-sizes, $name) {
+        @return map-get($global-font-sizes, $name);
+    } @else {
+        @warn "No text size #{$name} in $global-font-sizes.";
+    }
+}

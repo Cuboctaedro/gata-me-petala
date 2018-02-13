@@ -1,0 +1,72 @@
+
+
+
+.js-dropdown--click,
+.js-dropdown--hover {
+    position: relative;
+}
+.js-dropdown__target {
+    visibility: hidden;
+    position: absolute;
+    opacity: 0;
+    z-index: 9999;
+    transform: translateY(-2em);
+    z-index: -1;
+    transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+    min-width: _rem(240px);
+    @include box-shadow('three');
+    &.is_visible {
+        visibility: visible;
+        opacity: 1;
+        z-index: 9999;
+        transform: translateY(0%);
+        transition-delay: 0s, 0s, 0.3s;
+    }
+}
+.js-dropdown__target--overlay {
+    top: 100%;
+    &.is_visible {
+        position: absolute;
+        top: 100%;
+    }
+}
+.js-dropdown__target--push {
+    top: 0;
+    &.is_visible {
+        position: relative;
+        top: 0;
+    }
+}
+
+@include mq-tablet() {
+    .js-dropdown__target--overlay--tab {
+        top: 100%;
+        &.is_visible {
+            position: absolute;
+            top: 100%;
+        }
+    }
+    .js-dropdown__target--push--tab {
+        top: 0;
+        &.is_visible {
+            position: relative;
+            top: 0;
+        }
+    }
+}
+@include mq-desktop() {
+    .js-dropdown__target--overlay--desk {
+        top: 100%;
+        &.is_visible {
+            position: absolute;
+            top: 100%;
+        }
+    }
+    .js-dropdown__target--push--desk {
+        top: 0;
+        &.is_visible {
+            position: relative;
+            top: 0;
+        }
+    }
+}

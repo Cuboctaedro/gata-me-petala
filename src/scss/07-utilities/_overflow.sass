@@ -1,0 +1,94 @@
+//
+// Overflow
+// ====
+//
+// Uses tools-mixins/_overflow.sass
+//
+// Base classes
+// ----
+// ov = overflow
+// ov_x = overflow-x
+// ov_y = overflow-y
+//
+// Modifiers
+// ----
+// --visible
+// --hidden
+// --scroll
+// --auto
+
+
+.u-ov--visible
+    +ovflow('visible')
+.u-ov--hidden
+    +ovflow('hidden')
+.u-ov--scroll
+    +ovflow('scroll')
+.u-ov--auto
+    +ovflow('auto')
+.u-ov_x--visible
+    +ovflow-x('visible')
+.u-ov_x--hidden
+    +ovflow-x('hidden')
+.u-ov_x--scroll
+    +ovflow-x('scroll')
+.u-ov_x--auto
+    +ovflow-x('auto')
+.u-ov_y--visible
+    +ovflow-y('visible')
+.u-ov_y--hidden
+    +ovflow-y('hidden')
+.u-ov_y--scroll
+    +ovflow-y('scroll')
+.u-ov_y--auto
+    +ovflow-y('auto')
++_mq-tablet()
+    .u-ov--visible--tab
+        +ovflow('visible')
+    .u-ov--hidden--tab
+        +ovflow('hidden')
+    .u-ov--scroll--tab
+        +ovflow('scroll')
+    .u-ov--auto--tab
+        +ovflow('auto')
+    .u-ov_x--visible--tab
+        +ovflow-x('visible')
+    .u-ov_x--hidden--tab
+        +ovflow-x('hidden')
+    .u-ov_x--scroll--tab
+        +ovflow-x('scroll')
+    .u-ov_x--auto--tab
+        +ovflow-x('auto')
+    .u-ov_y--visible--tab
+        +ovflow-y('visible')
+    .u-ov_y--hidden--tab
+        +ovflow-y('hidden')
+    .u-ov_y--scroll--tab
+        +ovflow-y('scroll')
+    .u-ov_y--auto--tab
+        +ovflow-y('auto')
++_mq-desktop()
+    .u-ov--visible--desk
+        +ovflow('visible')
+    .u-ov--hidden--desk
+        +ovflow('hidden')
+    .u-ov--scroll--desk
+        +ovflow('scroll')
+    .u-ov--auto--desk
+        +ovflow('auto')
+    .u-ov_x--visible--desk
+        +ovflow-x('visible')
+    .u-ov_x--hidden--desk
+        +ovflow-x('hidden')
+    .u-ov_x--scroll--desk
+        +ovflow-x('scroll')
+    .u-ov_x--auto--desk
+        +ovflow-x('auto')
+    .u-ov_y--visible--desk
+        +ovflow-y('visible')
+    .u-ov_y--hidden--desk
+        +ovflow-y('hidden')
+    .u-ov_y--scroll--desk
+        +ovflow-y('scroll')
+    .u-ov_y--auto--desk
+        +ovflow-y('auto')
