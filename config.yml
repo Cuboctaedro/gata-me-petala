@@ -1,5 +1,5 @@
 
-baseURL:                    "http://gatamepetala.com"
+baseURL:                    "https://gata-me-petala.netlify.com"
 config:                     "config.yml"
 contentDir:                 "content"
 dataDir:                    "data"
