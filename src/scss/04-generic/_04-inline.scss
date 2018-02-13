@@ -16,12 +16,6 @@ abbr{
     @include underline(map-get($inline-settings, 'abbr_decoration'));
 }
 
-b,
-strong{
-    font-weight: inherit;
-    font-weight: normal;
-    font-family: GillSansNova-Bold;
-}
 code,
 kbd,
 samp{
