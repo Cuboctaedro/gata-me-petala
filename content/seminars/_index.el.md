@@ -10,6 +10,8 @@ image: "pictures-semi-017.jpg"
 
 Δείτε εδώ τα προγράμματα [αρχαρίων](http://www.gatamepetala.com/seminars/first-part) και [προχωρημένων](http://www.gatamepetala.com/seminars/second-part)
 
+Δείτε τα [έργα των μαθητών μας!](https://www.gatamepetala.com/student-works)
+
 Ανοιχτά για εγγραφές και πληροφορίες:
 Δευτέρα-Τετάρτη 12.00 έως 17.00
 Τρίτη-Πέμπτη-Παρασκευή 12.00 έως 21.00
