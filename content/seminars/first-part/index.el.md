@@ -28,7 +28,7 @@ menutype: seminars
 
 Τα σεμινάρια είναι εβδομαδιαία (ένα μάθημα την εβδομάδα) και ξεκινάνε στις 20 και 22 Φεβρουαρίου 2018. Πραγματοποιούνται μαθήματα ημέρες Τρίτη και Πέμπτη ώρες 18.00΄με 21.00΄. Τα δίδακτρα είναι 120 ευρώ /μήνα.
 
-Δείτε εδώ τα προγράμματα [αρχαρίων](http://www.gatamepetala.com/el/seminars/first-part) και [προχωρημένων](http://www.gatamepetala.com/el/seminars/second-part)
+Δείτε εδώ τα προγράμματα [αρχαρίων](http://www.gatamepetala.com/seminars/first-part) και [προχωρημένων](http://www.gatamepetala.com/seminars/second-part)
 
 Ανοιχτά για εγγραφές και πληροφορίες:
 Δευτέρα-Τετάρτη 12.00 έως 17.00
