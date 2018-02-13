@@ -11,8 +11,8 @@ $global-font-size : nth(map-get($global-font-sizes, 'medium') , 1) !default;
 $global-line-height : nth(map-get($global-font-sizes, 'medium') , 2) !default;
 
 $global-fonts : (
-    'text'   : 'Source Sans Pro, Gill Sans, Gill Sans MT, Calibri, sans-serif',
-    'titles' : 'Source Sans Pro, Gill Sans, Gill Sans MT, Calibri, sans-serif'
+    'text'   : 'Alegreya Sans, Gill Sans, Gill Sans MT, Calibri, sans-serif',
+    'titles' : 'Alegreya Sans, Gill Sans, Gill Sans MT, Calibri, sans-serif'
 ) !default;
 
 $global-font-family : map-get($global-fonts, 'text');
