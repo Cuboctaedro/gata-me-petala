@@ -1,0 +1,33 @@
+﻿---
+title: Sawing - soldering
+resources :
+  - src : "01-EleniKefala-04.jpg"
+    name : "Ελένη Κεφαλά - Δαχτυλίδι"
+  - src : "02-VarvaraAlimperti-02.jpg"
+    name : "Βαρβάρα Αλιμπέρτη - βραχιόλι"
+  - src : "03-IleanaPapasavvidi-03.jpg"
+    name : "Ιλένια Παπασαββίδη - Καρφίτσα"
+  - src : "04-DaniilMarouska-02.jpg"
+    name : "Δανιήλ Μαρούσκα - Βραχιόλι"
+  - src : "05-DaniilMarouska-03.jpg"
+    name : "Δανιήλ Μαρούσκα - Καρφίτσα"
+  - src : "06-GitsaDalta-03.jpg"
+    name : "Γίτσα Δάλτα - Καρφίτσα"
+  - src : "07-VarvaraAlimperti-03.jpg"
+    name : "Βαρβάρα Αλιμπέρτη - Κρεμαστό"
+  - src : "08-DimitrisNtouros-04.jpg"
+    name : "Δημήτρης Ντούρος - Καρφίτσα"
+  - src : "09-NikosMerantzis-01.jpg"
+    name : "Νίκος Μεραντζής - Καρφίτσα"
+  - src : "10-HrysanthiHahoulia-02.jpg"
+    name : "Χρυσάνθη Χαχούλια - Κρεμαστό"
+  - src : "11-DimitraGogi-03.jpg"
+    name : "Δήμητρα Γώγη - Δαχτυλίδι"
+  - src : "12-MarinaKarasmani-03.jpg"
+    name : "Μαρίνα Καρασμάνη - Σκουλαρίκια"
+  - src : "13-MargaritaAlexandridi-02.jpg"
+    name : "Μαργαρίτα Αλεξανδρίδη - Κρεμαστό"
+  - src : "14-NikiMpourdeka-05.jpg"
+    name : "Νίκη Μπουρδέκα - Καρφίτσα"
+---
+
