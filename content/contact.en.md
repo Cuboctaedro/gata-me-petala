@@ -1,5 +1,5 @@
 ---
-title: Επικοινωνία
+title: Contact
 scematype: WebPage
 layout: contact
 ---
