@@ -1,10 +1,10 @@
 
-baseURL:                    "https://gata-me-petala.netlify.com"
+baseURL:                    "https://www.gatamepetala.com"
 config:                     "config.yml"
 contentDir:                 "content"
 dataDir:                    "data"
 defaultLayout:              "post"
-defaultContentLanguage:     "en"
+defaultContentLanguage:     "el"
 defaultContentLanguageInSubdir: false
 languages:
   en:
