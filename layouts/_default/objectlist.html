@@ -17,8 +17,9 @@
             <article class="o-grid__cell o-grid__cell--4of8--tab o-grid__cell--4of12--desk c-card">
                 <a href="{{ .Permalink }}">
                     {{ range .Resources.Match .Params.image }}
-                        <div class="c-card__image o-aspect-ratio--landscape"  style="background-image: url({{ .RelPermalink }});">
-                            <img class="visually-hidden" src="{{ .RelPermalink }}" alt="{{ .Name }}">
+                        {{ $image := .Resize "x310" }}
+                        <div class="c-card__image o-aspect-ratio--landscape"  style="background-image: url({{ $image.RelPermalink }});">
+                            <img class="visually-hidden" src="{{ $image.RelPermalink }}" alt="{{ .Name }}">
                         </div>
                     {{ end }}
                     <div class="c-card__title">

@@ -1,7 +1,8 @@
 <div class="lightbox-gallery">
 {{ range $index, $element := (.Resources.ByType "image") }}
 {{ $image := $element.Resize "x310" }}
-<a href="{{ $element.Permalink }}" >
+{{ $bigimage := $element.Resize "1200x" }}
+<a href="{{ $bigimage.RelPermalink }}" >
     {{ if gt $element.Width $element.Height}}
     <figure class="o-grid__cell o-grid__cell--2of3--desk c-card" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
         <div class="c-card__image o-aspect-ratio--landscape"  style="background-image: url({{ $image.RelPermalink }});">
