@@ -11,6 +11,22 @@
  *
  *
  */
+ @font-face {
+    font-family: 'Alegreya Sans';
+    font-weight: 400;
+    font-style: normal;
+    src: url('Alegreya-Regular.eot'); /* IE9 Compat Modes */
+    src: url('Alegreya-Regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('Alegreya-Regular.woff') format('woff'); /* Pretty Modern Browsers */
+  }
+  @font-face {
+    font-family: 'Alegreya Sans';
+    font-weight: 700;
+    font-style: normal;
+    src: url('Alegreya-Bold.eot'); /* IE9 Compat Modes */
+    src: url('Alegreya-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+         url('Alegreya-Bold.woff') format('woff'); /* Pretty Modern Browsers */
+  }
 
 
 /* 01. Global Variables
